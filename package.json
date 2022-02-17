@@ -1,0 +1,27 @@
+{
+  "name": "chateletauthwebsite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EPSI-Work/ChateletAuthWebsite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EPSI-Work/ChateletAuthWebsite/issues"
+  },
+  "homepage": "https://github.com/EPSI-Work/ChateletAuthWebsite#readme",
+  "dependencies": {
+    "connect": "^3.7.0",
+    "express": "^4.17.3",
+    "mustache": "^4.2.0",
+    "pug": "^3.0.2",
+    "qrcode": "^1.5.0",
+    "speakeasy": "^2.0.0"
+  }
+}

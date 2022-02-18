@@ -14,7 +14,8 @@ var bodyParser = require("body-parser");
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 app.get("/", (req, res) => {
-  res.redirect("/login");
+  res.sendFile(__dirname + "/views/index.html");
+  //res.redirect("/login");
 });
 
 app.get("/login", (req, res) => {

@@ -1,0 +1,100 @@
+/* CSS Libraries Used 
+
+*Animate.css by Daniel Eden.
+*FontAwesome 4.7.0
+*Typicons
+
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400");
+
+body,
+html {
+  font-family: "Source Sans Pro", sans-serif;
+  padding: 0;
+  margin: 0;
+  background-image: url('/public/assets/pictures/background.png');
+  height:100%;
+  overflow:hidden;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0;
+  top: 30%;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  transform: translateX(-50%);
+  background-color: rgb(33, 41, 66);
+  border-radius: 12px;
+  width: 400px;
+  height: 500px;
+  display: flex;
+  box-shadow: 1px 1px 108.8px 19.2px rgb(25 31 53);
+  flex-direction: column;
+  justify-content: space-around;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h2 {
+  font-family: "Source Sans Pro", sans-serif;
+  color: #fff;
+  font-size: 30px;
+}
+
+h6 {
+  font-family: "Source Sans Pro", sans-serif;
+  color: #fff;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.spacer{
+  padding: 18px;
+  flex: 5;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.headband{
+  flex: 1;
+  background-color: #FF8D31;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+.btn-center{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-add {
+  border: 0;
+  background: #FF8D31;
+  color: #dfdeee;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  font-size: 16px;
+  position: absolute;
+  transition: 0.3s;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15%;
+}
+
+.btn-add img{
+  height: 50%;
+}
+
+.btn1:hover {
+  background: #5d33e6;
+}

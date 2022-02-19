@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="/css/home/home.css">
-    <link rel="stylesheet" type="text/css" href="/css/home/pop-up.css">
-    <link rel="stylesheet" type="text/css" href="/css/home/select.css">
+    <link rel="stylesheet" type="text/css" href="/css/home/home.css" />
+    <link rel="stylesheet" type="text/css" href="/css/home/pop-up.css" />
+    <link rel="stylesheet" type="text/css" href="/css/home/select.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Accueil</title>
   </head>
   <body>
-
     <div class="modal" id="modal">
       <div class="modal-header">
         <div class="title">Choix du thème</div>
@@ -20,45 +20,45 @@
         <form action="" method="post">
           <div class="modal-select-container">
             <details>
-              <summary>Test Dropdown</summary>
+              <summary class="select-content">Test Dropdown</summary>
               <ul>
-                <li>Item 1</li>
-                <li>Item 2</li>
-                <li>Item 3</li>
-                <li>Item 4</li>
-                <li>Item 5</li>
-                <li>Item 1</li>
-                <li>Item 2</li>
-                <li>Item 3</li>
-                <li>Item 4</li>
-                <li>Item 5</li>
+                <li class="select-item">
+                  <div class="select-item-content">Item 1</div>
+                </li>
+                <li class="select-item">
+                  <div class="select-item-content">Item 2</div>
+                </li>
+                <li class="select-item">
+                  <div class="select-item-content">Item 3</div>
+                </li>
+                <li class="select-item">
+                  <div class="select-item-content">Item 4</div>
+                </li>
               </ul>
             </details>
           </div>
           <div class="modal-btn-container">
-            <button class="btn-1">Suivant</button>
+            <button class="btn-submit">Suivant</button>
           </div>
         </form>
       </div>
     </div>
     <div id="overlay"></div>
 
-
-
-    <img src="/assets/pictures/background.png" alt="" srcset="">
-    <div class="container" style="background-image:
-      url('/assets/pictures/home-box.png');">
+    <img src="/assets/pictures/background.png" alt="" srcset="" />
+    <div
+      class="container"
+      style="background-image: url('/assets/pictures/home-box.png')"
+    >
       <h2>Ajouter des questions</h2>
-      <div class="spacer">
-
-      </div>
+      <div class="spacer"></div>
       <div class="headband">
         <h6>Chaque question est vérifiée par un Administrateur</h6>
       </div>
       <div class="btn-center">
-        <button type="submit" class="btn-add" data-modal-target="#modal"><img
-            src="/assets/icons/plus.png"
-            alt="" srcset=""></button>
+        <button type="submit" class="btn-add" data-modal-target="#modal">
+          <img src="/assets/icons/plus.png" alt="" srcset="" />
+        </button>
       </div>
     </div>
     <script src="/js/home/pop-up.js"></script>

@@ -39,10 +39,15 @@
 }
 
 .modal-body {
+    padding: 8px;
+}
+
+.modal-body-content {
     padding: 10px 15px;
     height: 340px;
     display: flex;
     flex-direction: column;
+    overflow: auto;
 }
 
 .modal-body form {

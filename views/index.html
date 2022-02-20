@@ -1,66 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="/css/home/home.css" />
     <link rel="stylesheet" type="text/css" href="/css/home/pop-up.css" />
     <link rel="stylesheet" type="text/css" href="/css/home/select.css" />
+    <link rel="stylesheet" type="text/css" href="/css/form/input.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Accueil</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="modal" id="modal">
-      <div class="modal-header">
-        <div class="title">Choix du thème</div>
-        <button data-close-button class="close-button">&times;</button>
-      </div>
-      <div class="modal-body">
-        <form action="" method="post">
-          <div class="modal-select-container">
-            <details>
-              <summary class="select-content">Test Dropdown</summary>
-              <ul>
-                <li class="select-item">
-                  <div class="select-item-content">Item 1</div>
-                </li>
-                <li class="select-item">
-                  <div class="select-item-content">Item 2</div>
-                </li>
-                <li class="select-item">
-                  <div class="select-item-content">Item 3</div>
-                </li>
-                <li class="select-item">
-                  <div class="select-item-content">Item 4</div>
-                </li>
-              </ul>
-            </details>
-          </div>
-          <div class="modal-btn-container">
-            <button class="btn-submit">Suivant</button>
-          </div>
-        </form>
-      </div>
+        <div class="modal-header">
+            <h3 class="form-label">Ajout d'une question</h3>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="modal-body-content">
+                <form action="/" method="post">
+                    <label class="form-label" for="question-content">Question</label>
+                    <input class="form-input" name="question-content" type="text">
+
+                    <label class="form-label" for="goodanswer-content">Réponse</label>
+                    <input class="form-input" name="goodanswer-content" type="text">
+
+                    <div class="input-container">
+                        <div class="input-container-wrapper">
+                            <label class="form-label" for="badanswer0-content">Mauvaise réponse</label>
+                            <input class="form-input" name="badanswer0-content" type="text">
+                            <label class="form-label" for="badanswer1-content">Mauvaise réponse</label>
+                            <div class="input-deletable-container">
+                                <input class="form-input" name="badanswer1-content" type="text">
+                                <img src="/assets/icons/bin.png" alt="delete">
+                            </div>
+                        </div>
+                        <div class="input-container-center-btn">
+                            <button name="btn-add-badanswer" class="input-container-btn-add"><img src="/assets/icons/plus.png" alt="add"></button>
+                        </div>
+                    </div>
+
+                    <div class="modal-select-container">
+                        <details>
+                            <summary class="select-content form-select">Test Dropdown</summary>
+                            <ul class="form-select">
+                                <li class="select-item">
+                                    <div class="select-item-content">Item 1</div>
+                                </li>
+                                <li class="select-item">
+                                    <div class="select-item-content">Item 2</div>
+                                </li>
+                                <li class="select-item">
+                                    <div class="select-item-content">Item 3</div>
+                                </li>
+                                <li class="select-item">
+                                    <div class="select-item-content">Item 4</div>
+                                </li>
+                            </ul>
+                        </details>
+                    </div>
+                    <div class="modal-btn-container">
+                        <button class="btn-submit">Suivant</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
     <div id="overlay"></div>
 
     <img src="/assets/pictures/background.png" alt="" srcset="" />
-    <div
-      class="container"
-      style="background-image: url('/assets/pictures/home-box.png')"
-    >
-      <h2>Ajouter des questions</h2>
-      <div class="spacer"></div>
-      <div class="headband">
-        <h6>Chaque question est vérifiée par un Administrateur</h6>
-      </div>
-      <div class="btn-center">
-        <button type="submit" class="btn-add" data-modal-target="#modal">
+    <div class="container" style="background-image: url('/assets/pictures/home-box.png')">
+        <h2>Ajouter des questions</h2>
+        <div class="spacer"></div>
+        <div class="headband">
+            <h6>Chaque question est vérifiée par un Administrateur</h6>
+        </div>
+        <div class="btn-center">
+            <button type="submit" class="btn-add" data-modal-target="#modal">
           <img src="/assets/icons/plus.png" alt="" srcset="" />
         </button>
-      </div>
+        </div>
     </div>
     <script src="/js/home/pop-up.js"></script>
-  </body>
+    <script src="/js/home/form/bad-answer.js"></script>
+</body>
+
 </html>

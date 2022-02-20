@@ -1,0 +1,81 @@
+.form-input {
+    border: 1px solid #dbe4ee;
+    color: #243b53;
+    background-color: #f6f9fd;
+    border-radius: 10px;
+    outline: none;
+    min-height: 44px;
+    font-size: 15px;
+    padding: 0px 8px;
+    margin: 4px 0px;
+}
+
+.form-select {
+    border: 1px solid #dbe4ee;
+    color: #243b53;
+    background-color: #f6f9fd;
+    border-radius: 10px;
+    outline: none;
+}
+
+.input-container {
+    border: 1px solid #dbe4ee;
+    background-color: #fff;
+    padding: 12px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-deletable-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.input-deletable-container img {
+    height: 44px;
+    width: 44px;
+    background-color: #FF8D31;
+}
+
+.input-container-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container-center-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-container-btn-add {
+    outline: none;
+    border: 0;
+    background: #FF8D31;
+    color: #dfdeee;
+    border-radius: 8px;
+    width: 34px;
+    height: 26px;
+    font-size: 16px;
+    transition: 0.3s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-container-btn-add img {
+    height: 50%;
+}
+
+h3.form-label {
+    color: #243b53;
+    font-size: 22px;
+}
+
+label.form-label {
+    color: #8897a7;
+    font-size: 18px;
+}

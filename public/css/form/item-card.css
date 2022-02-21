@@ -6,7 +6,9 @@
 }
 
 .item-card {
-    background-color: red;
+    border: 1.5px solid #243b53;
+    background-color: #f6f9fd;
+    color: #243b53;
     margin: 0px 10px;
     min-height: 100px;
     min-width: 80px;
@@ -17,6 +19,9 @@
     align-items: center;
 }
 
-.item-card:first-child {
-    margin-left: 80px;
+.item-card-selected {
+    border: 1.5px solid #da701a;
+    background-color: #ff8d31;
+    color: #fff;
 }
+

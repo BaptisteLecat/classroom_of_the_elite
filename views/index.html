@@ -1,115 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="/css/home/home.css" />
-    <link rel="stylesheet" type="text/css" href="/css/home/pop-up.css" />
-    <link rel="stylesheet" type="text/css" href="/css/home/select.css" />
-    <link rel="stylesheet" type="text/css" href="/css/form/input.css" />
-    <link rel="stylesheet" type="text/css" href="/css/form/item-card.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <title>Accueil</title>
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="/css/home/home.css" />
+        <link rel="stylesheet" type="text/css" href="/css/home/pop-up.css" />
+        <link rel="stylesheet" type="text/css" href="/css/home/select.css" />
+        <link rel="stylesheet" type="text/css" href="/css/form/input.css" />
+        <link rel="stylesheet" type="text/css" href="/css/form/item-card.css" />
+        <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <title>Accueil</title>
+    </head>
 
-<body>
-    <div class="modal" id="modal">
-        <div class="modal-header">
-            <h3 class="form-label">Ajout d'une question</h3>
-            <button data-close-button class="close-button">&times;</button>
-        </div>
-        <div class="modal-body">
-            <div class="modal-body-content">
-                <form action="/" method="post">
-                    <label class="form-label" for="question-content">Question</label>
-                    <input class="form-input" name="question-content" type="text">
+    <body>
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <h3 class="form-label">Ajout d'une question</h3>
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body-content">
+                    <form action="/" method="post">
+                        <label class="form-label" for="question-content">Question</label>
+                        <input class="form-input" name="question-content"
+                            type="text">
 
-                    <label class="form-label" for="goodanswer-content">Réponse</label>
-                    <input class="form-input" name="goodanswer-content" type="text">
+                        <label class="form-label" for="goodanswer-content">Réponse</label>
+                        <input class="form-input" name="goodanswer-content"
+                            type="text">
 
-                    <div class="form-input-container">
-                        <div class="input-container">
-                            <div class="input-container-wrapper" name="input-box-0">
-                                <label class="form-label" for="badanswer-0-content">Mauvaise réponse</label>
-                                <input class="form-input" name="badanswer-0-content" type="text">
+                        <div class="form-input-container">
+                            <div class="input-container">
+                                <div class="input-container-wrapper"
+                                    name="input-box-0">
+                                    <label class="form-label"
+                                        for="badanswer-0-content">Mauvaise
+                                        réponse</label>
+                                    <input class="form-input"
+                                        name="badanswer-0-content" type="text">
+                                </div>
+                                <div class="input-container-wrapper"
+                                    name="input-box-1">
+                                    <label class="form-label"
+                                        for="badanswer-1-content">Mauvaise
+                                        réponse</label>
+                                    <input class="form-input"
+                                        name="badanswer-1-content" type="text">
+                                </div>
                             </div>
-                            <div class="input-container-wrapper" name="input-box-1">
-                                <label class="form-label" for="badanswer-1-content">Mauvaise réponse</label>
-                                <input class="form-input" name="badanswer-1-content" type="text">
-                            </div>
-                        </div>
-                        <div class="input-container-center-btn">
-                            <button name="btn-add-badanswer" class="input-container-btn-add"><img
-                                    src="/assets/icons/plus.png" alt="add"></button>
-                        </div>
-                    </div>
-
-                    <label class="form-label" for="goodanswer-content">Réponse</label>
-                    <div class="form-input-container">
-                        <div class="item-card-list">
-                            <div class="item-card">
-                                <p>Item Card</p>
-                            </div>
-                            <div class="item-card">
-                                <p>Item Card</p>
-                            </div>
-                            <div class="item-card">
-                                <p>Item Card</p>
+                            <div class="input-container-center-btn">
+                                <button name="btn-add-badanswer"
+                                    class="input-container-btn-add"><img
+                                        src="/assets/icons/plus.png" alt="add"></button>
                             </div>
                         </div>
-                    </div>
 
-                    <label class="form-label" for="goodanswer-content">Réponse</label>
-                    <input class="form-input" name="goodanswer-content" type="text">
+                        <label class="form-label" for="goodanswer-content">Theme</label>
+                        <div class="modal-select-container">
+                            <details>
+                                <summary class="select-content form-select">Choisissez
+                                    un thème</summary>
+                                <ul class="form-select">
+                                    <li class="select-item">
+                                        <div class="select-item-content">Item 1</div>
+                                    </li>
+                                    <li class="select-item">
+                                        <div class="select-item-content">Item 2</div>
+                                    </li>
+                                    <li class="select-item">
+                                        <div class="select-item-content">Item 3</div>
+                                    </li>
+                                    <li class="select-item">
+                                        <div class="select-item-content">Item 4</div>
+                                    </li>
+                                </ul>
+                            </details>
+                        </div>
 
-                    <label class="form-label" for="goodanswer-content">Réponse</label>
-                    <input class="form-input" name="goodanswer-content" type="text">
+                        <label class="form-label" for="goodanswer-content">Durée</label>
+                        <div class="form-input-container">
+                            <div class="item-card-list"
+                                name="item-card-list-time">
+                                <div class="item-card item-card-selected"
+                                    name="0">
+                                    <p>Item Card</p>
+                                </div>
+                                <div class="item-card" name="1">
+                                    <p>Item Card</p>
+                                </div>
+                                <div class="item-card" name="3">
+                                    <p>Item Card</p>
+                                </div>
+                            </div>
+                        </div>
 
-                    <div class="modal-select-container">
-                        <details>
-                            <summary class="select-content form-select">Test Dropdown</summary>
-                            <ul class="form-select">
-                                <li class="select-item">
-                                    <div class="select-item-content">Item 1</div>
-                                </li>
-                                <li class="select-item">
-                                    <div class="select-item-content">Item 2</div>
-                                </li>
-                                <li class="select-item">
-                                    <div class="select-item-content">Item 3</div>
-                                </li>
-                                <li class="select-item">
-                                    <div class="select-item-content">Item 4</div>
-                                </li>
-                            </ul>
-                        </details>
-                    </div>
-                    <div class="modal-btn-container">
-                        <button class="btn-submit">Valider</button>
-                    </div>
-                </form>
+                        <label class="form-label" for="goodanswer-content">Difficulté</label>
+                        <div class="form-input-container">
+                            <div class="item-card-list"
+                                name="item-card-list-difficulty">
+                                <div class="item-card item-card-selected"
+                                    name="0">
+                                    <p>Item Card</p>
+                                </div>
+                                <div class="item-card" name="1">
+                                    <p>Item Card</p>
+                                </div>
+                                <div class="item-card" name="3">
+                                    <p>Item Card</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-btn-container">
+                            <button class="btn-submit">Valider</button>
+                        </div>
+
+                        <input type="hidden" name="time_id" value="">
+                        <input type="hidden" name="difficulty_id" value="">
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-    <div id="overlay"></div>
+        <div id="overlay"></div>
 
-    <img src="/assets/pictures/background.png" alt="" srcset="" />
-    <div class="container" style="background-image: url('/assets/pictures/home-box.png')">
-        <h2>Ajouter des questions</h2>
-        <div class="spacer"></div>
-        <div class="headband">
-            <h6>Chaque question est vérifiée par un Administrateur</h6>
+        <img src="/assets/pictures/background.png" alt="" srcset="" />
+        <div class="container" style="background-image:
+            url('/assets/pictures/home-box.png')">
+            <h2>Ajouter des questions</h2>
+            <div class="spacer"></div>
+            <div class="headband">
+                <h6>Chaque question est vérifiée par un Administrateur</h6>
+            </div>
+            <div class="btn-center">
+                <button type="submit" class="btn-add"
+                    data-modal-target="#modal">
+                    <img src="/assets/icons/plus.png" alt="" srcset="" />
+                </button>
+            </div>
         </div>
-        <div class="btn-center">
-            <button type="submit" class="btn-add" data-modal-target="#modal">
-                <img src="/assets/icons/plus.png" alt="" srcset="" />
-            </button>
-        </div>
-    </div>
-    <script src="/js/home/pop-up.js"></script>
-    <script src="/js/home/form/bad-answer.js"></script>
-</body>
+        <script src="/js/home/pop-up.js"></script>
+        <script src="/js/home/form/bad-answer.js"></script>
+        <script src="/js/home/form/item-card.js"></script>
+    </body>
 
 </html>

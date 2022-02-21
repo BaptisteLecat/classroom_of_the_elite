@@ -12,9 +12,9 @@ app.set("view engine", "pug");
 var bodyParser = require("body-parser");
 // create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
-
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/views/index.html");
+  //res.sendFile(__dirname + "/views/index.html");
+  res.render('home/index');
   //res.redirect("/login");
 });
 

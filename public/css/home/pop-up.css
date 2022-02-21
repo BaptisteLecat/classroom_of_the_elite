@@ -44,8 +44,8 @@
 
 .modal-body-content {
     padding: 10px 15px;
-    height: 340px;
     display: flex;
+    max-height: 760px;
     flex-direction: column;
     overflow: auto;
 }
@@ -89,24 +89,11 @@
     background: #ff8d31;
     color: #ffffff;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 22px;
     padding: 12px;
     border: 0;
     transition: all 0.5s;
     border-radius: 10px;
     width: auto;
-    position: relative;
-}
-
-.btn-submit:hover {
-    background: #e97c4a;
-    transition: all 0.5s;
-    border-radius: 10px;
-    box-shadow: 0px 6px 15px #c4712d;
-    padding: 18px;
-}
-
-.btn-submit:hover::after {
-    opacity: 1;
-    transition: all 0.5s;
+    margin-top: 10px;
 }

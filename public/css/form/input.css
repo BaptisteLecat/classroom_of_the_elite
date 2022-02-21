@@ -13,9 +13,10 @@
 
 .form-select {
     border: 1px solid #dbe4ee;
-    color: #243b53;
+    color: #8897a7;
     background-color: #f6f9fd;
     border-radius: 10px;
+    margin: 4px 0px;
     outline: none;
 }
 
@@ -29,8 +30,7 @@
     background-color: #fff;
     padding: 12px;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
+    margin: 4px 0px;
 }
 
 .input-deletable-container {

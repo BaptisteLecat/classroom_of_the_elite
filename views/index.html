@@ -28,18 +28,20 @@
                     <label class="form-label" for="goodanswer-content">Réponse</label>
                     <input class="form-input" name="goodanswer-content" type="text">
 
-                    <div class="input-container">
-                        <div class="input-container-wrapper">
-                            <label class="form-label" for="badanswer0-content">Mauvaise réponse</label>
-                            <input class="form-input" name="badanswer0-content" type="text">
-                            <label class="form-label" for="badanswer1-content">Mauvaise réponse</label>
-                            <div class="input-deletable-container">
-                                <input class="form-input" name="badanswer1-content" type="text">
-                                <img src="/assets/icons/bin.png" alt="delete">
+                    <div class="form-input-container">
+                        <div class="input-container">
+                            <div class="input-container-wrapper" name="input-box-0">
+                                <label class="form-label" for="badanswer-0-content">Mauvaise réponse</label>
+                                <input class="form-input" name="badanswer-0-content" type="text">
+                            </div>
+                            <div class="input-container-wrapper" name="input-box-1">
+                                <label class="form-label" for="badanswer-1-content">Mauvaise réponse</label>
+                                <input class="form-input" name="badanswer-1-content" type="text">
                             </div>
                         </div>
                         <div class="input-container-center-btn">
-                            <button name="btn-add-badanswer" class="input-container-btn-add"><img src="/assets/icons/plus.png" alt="add"></button>
+                            <button name="btn-add-badanswer" class="input-container-btn-add"><img
+                                    src="/assets/icons/plus.png" alt="add"></button>
                         </div>
                     </div>
 
@@ -80,8 +82,8 @@
         </div>
         <div class="btn-center">
             <button type="submit" class="btn-add" data-modal-target="#modal">
-          <img src="/assets/icons/plus.png" alt="" srcset="" />
-        </button>
+                <img src="/assets/icons/plus.png" alt="" srcset="" />
+            </button>
         </div>
     </div>
     <script src="/js/home/pop-up.js"></script>

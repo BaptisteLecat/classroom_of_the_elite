@@ -8,6 +8,7 @@
     font-size: 15px;
     padding: 0px 8px;
     margin: 4px 0px;
+    flex: auto;
 }
 
 .form-select {
@@ -19,6 +20,11 @@
 }
 
 .input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input-container {
     border: 1px solid #dbe4ee;
     background-color: #fff;
     padding: 12px;
@@ -34,9 +40,12 @@
 }
 
 .input-deletable-container img {
-    height: 44px;
-    width: 44px;
-    background-color: #FF8D31;
+    height: 22px;
+    width: 22px;
+    padding: 6px;
+    border-radius: 6px;
+    margin-left: 4px;
+    background-color: #e7474f;
 }
 
 .input-container-wrapper {
@@ -57,7 +66,7 @@
     color: #dfdeee;
     border-radius: 8px;
     width: 34px;
-    height: 26px;
+    height: 28px;
     font-size: 16px;
     transition: 0.3s;
     cursor: pointer;

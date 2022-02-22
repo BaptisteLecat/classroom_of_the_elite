@@ -14,8 +14,11 @@ var bodyParser = require("body-parser");
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 app.get("/", (req, res) => {
   //res.sendFile(__dirname + "/views/index.html");
+  const { instance } = require("./src/services/api/mainRepository.js");
+  const themeRepository = require("./src/services/api/themeRepository.js");
+  var themeRepo = new themeRepository.ThemeRepository(instance);
+  var result = themeRepo.getThemes();
   res.render('home/index');
-  //res.redirect("/login");
 });
 
 app.get("/login", (req, res) => {

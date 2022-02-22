@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/EPSI-Work/ChateletAuthWebsite#readme",
   "dependencies": {
+    "axios": "^0.26.0",
     "connect": "^3.7.0",
     "express": "^4.17.3",
     "mustache": "^4.2.0",

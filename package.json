@@ -19,7 +19,11 @@
   "dependencies": {
     "axios": "^0.26.0",
     "connect": "^3.7.0",
+    "cookie-parser": "^1.4.6",
     "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "jquery": "^3.6.0",
+    "jsdom": "^19.0.0",
     "mustache": "^4.2.0",
     "pug": "^3.0.2",
     "qrcode": "^1.5.0",

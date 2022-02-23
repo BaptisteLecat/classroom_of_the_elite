@@ -1,15 +1,24 @@
-const {
-  AxiosInstance,
-} = require("../../../../src/services/api/mainRepository");
-const themeRepository = require("../../../../src/services/api/themeRepository.js");
-
+const { JSDOM } = require("jsdom");
+const { window } = new JSDOM("");
+const $ = require("jquery")(window);
 async function postTheme(label) {
-  var themeRepo = new themeRepository.ThemeRepository(
-    AxiosInstance.getAxiosInstance()
-  );
-  await themeRepo.postTheme(label).then((result) => {
-    console.log(result);
-  });
+    console.log(label);
+    console.log("-------------------------------")
+    $.ajax({
+        type: "POST",
+        url: "http://localhost:3001/themes",
+        xhrFields: { withCredentials: true },
+        dataType: "json",
+        data: {
+            label: label,
+        },
+        success: function(msg) {
+            Alert("This is the data returned" + msg);
+        },
+        error: function(err) {
+            Alert("This is the message of failure" + err);
+        },
+    });
 }
 
 exports.postTheme = postTheme;

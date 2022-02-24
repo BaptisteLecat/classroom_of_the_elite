@@ -3,6 +3,10 @@ const session = require("express-session");
 var MySQLStore = require("express-mysql-session")(session);
 const app = express();
 
+const authRoutes = require("./src/routes/auth/auth-routes");
+const themeRoutes = require("./src/routes/theme/theme-routes");
+const rootRootes = require("./src/routes/root-routes");
+
 var options = {
   host: "146.59.177.96",
   port: 3306,
@@ -46,52 +50,12 @@ var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const { AxiosInstance } = require("./src/services/api/mainRepository.js");
-
-app.get("/", async (req, res) => {
-  if (req.session.jwt) {
-    console.log(req.session.jwt);
-    const themeRepository = require("./src/services/api/themeRepository.js");
-    var themeRepo = new themeRepository.ThemeRepository(
-      AxiosInstance.getAxiosInstance(req.session.jwt)
-    );
-    await themeRepo.getThemes().then((result) => {
-      //console.log(result);
-    });
-
-    res.render("home/index");
-  } else res.redirect("/login");
-});
-
-app.get("/login", (req, res) => {
-  res.render("login/auth");
-});
-
-// POST /login gets urlencoded bodies
-app.post("/login", async function (req, res) {
-  if (!(!req.body.email && !req.body.password)) {
-    const authRepository = require("./src/services/api/authRepository.js");
-    var authRepo = new authRepository.AuthRepository();
-    await authRepo.login(req.body.email, req.body.password).then((result) => {
-      console.log(result);
-      req.session.jwt = result.jwt;
-      console.log(req.sessionID);
-      res.redirect("/");
-    });
-  }
-});
-
-app.post("/themes", async function (req, res) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3001/themes");
-  res.header("Access-Control-Allow-Credentials", true);
-  const themeRepository = require("./src/services/api/themeRepository.js");
-  var themeRepo = new themeRepository.ThemeRepository(
-    AxiosInstance.getAxiosInstance(req.session.jwt)
-  );
-  await themeRepo.postTheme(req.body.label).then((result) => {
-    console.log(result);
-  });
-});
+app.use(
+  "/",
+authRoutes,
+themeRoutes,
+rootRootes,
+);
 
 app.listen(port, () => {
   console.log(`Application à l'écoute sur le port ${port}!`);

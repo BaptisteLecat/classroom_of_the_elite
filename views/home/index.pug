@@ -43,32 +43,34 @@ head
               | Choisissez
               | un th&egrave;me
             ul.form-select
-              li.select-item
-                .select-item-content Item 1
-              li.select-item
-                .select-item-content Item 2
-              li.select-item
-                .select-item-content Item 3
-              li.select-item
-                .select-item-content Item 4
+              each theme in themes 
+                li.select-item
+                  .select-item-content #{theme.label}
+              
         label.form-label(for='goodanswer-content') Dur&eacute;e
         .form-input-container
           .item-card-list(name='item-card-list-time')
-            .item-card.item-card-selected(name='0')
-              p Item Card
-            .item-card(name='1')
-              p Item Card
-            .item-card(name='3')
-              p Item Card
+            each time, index in times
+              if index == 0
+                .item-card.item-card-selected(name= index)
+                  p #{time.label}
+                  p #{time.time}
+              else
+                .item-card(name= index)
+                  p #{time.label}
+                  p #{time.time}
         label.form-label(for='goodanswer-content') Difficult&eacute;
         .form-input-container
           .item-card-list(name='item-card-list-difficulty')
-            .item-card.item-card-selected(name='0')
-              p Item Card
-            .item-card(name='1')
-              p Item Card
-            .item-card(name='3')
-              p Item Card
+            each difficulty, index in difficulties
+              if index == 0
+                .item-card.item-card-selected(name= index)
+                  p #{difficulty.label}
+                  p #{difficulty.point}
+              else
+                .item-card(name= index)
+                  p #{difficulty.label}
+                  p #{difficulty.point}
         .modal-btn-container
           button.btn-submit Valider
         input(type='hidden' name='time_id' value='')

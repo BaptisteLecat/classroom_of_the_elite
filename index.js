@@ -4,7 +4,7 @@ var MySQLStore = require("express-mysql-session")(session);
 const app = express();
 
 const authRoutes = require("./src/routes/auth/auth-routes");
-const themeRoutes = require("./src/routes/theme/theme-routes");
+const questionRoutes = require("./src/routes/question/question-routes");
 const rootRootes = require("./src/routes/root-routes");
 
 var options = {
@@ -50,12 +50,7 @@ var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use(
-  "/",
-authRoutes,
-themeRoutes,
-rootRootes,
-);
+app.use("/", authRoutes, questionRoutes, rootRootes);
 
 app.listen(port, () => {
   console.log(`Application à l'écoute sur le port ${port}!`);

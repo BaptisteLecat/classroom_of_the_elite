@@ -10,7 +10,7 @@ $(document).ready(function () {
       itemCardTimeId = $(this).attr("name");
     }
 
-    $('input[name="time_id"]').val(itemCardTimeId);
+    $('#time_id').val(itemCardTimeId);
   });
 
   var itemCardDifficultyId = 0;
@@ -26,6 +26,6 @@ $(document).ready(function () {
       itemCardDifficultyId = $(this).attr("name");
     }
 
-    $('input[name="difficulty_id"]').val(itemCardDifficultyId);
+    $('#difficulty_id').val(itemCardDifficultyId);
   });
 });

@@ -2,9 +2,11 @@ const express = require("express");
 
 const router = express.Router();
 
-const { AxiosInstance } = require(`${process.cwd()}/src/services/api/mainRepository.js`);
+const {
+  AxiosInstance,
+} = require(`${process.cwd()}/src/services/api/mainRepository.js`);
 
-router.get('/', async(req,res) => {
+router.get("/", async (req, res) => {
   //req.session.destroy();
   if (req.session && req.session.jwt) {
     /** Modal fields data */
@@ -31,16 +33,14 @@ router.get('/', async(req,res) => {
       difficulties = listDifficulties["hydra:member"];
     });
     await timeRepo.getTimes().then((listTimes) => {
-      console.log(listTimes);
       times = listTimes["hydra:member"];
     });
 
     res.locals.themes = themes;
     res.locals.difficulties = difficulties;
     res.locals.times = times;
-    console.log(themes);
     res.render("home/index");
   } else res.redirect("/login");
-})
+});
 
 module.exports = router;

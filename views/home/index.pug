@@ -16,23 +16,23 @@ head
     button.close-button(data-close-button='') &times;
   .modal-body
     .modal-body-content
-      form(action='/' method='post')
+      form
         label.form-label(for='question-content') Question
-        input.form-input(name='question-content' type='text')
+        input.form-input(name='question-content' id='question-content' type='text')
         label.form-label(for='goodanswer-content') R&eacute;ponse
-        input.form-input(name='goodanswer-content' type='text')
+        input.form-input(name='goodanswer-content' id='goodanswer-content' type='text')
         .form-input-container
           .input-container
             .input-container-wrapper(name='input-box-0')
               label.form-label(for='badanswer-0-content')
                 | Mauvaise
                 | r&eacute;ponse
-              input.form-input(name='badanswer-0-content' type='text')
+              input.form-input(name='badanswer-content' type='text')
             .input-container-wrapper(name='input-box-1')
               label.form-label(for='badanswer-1-content')
                 | Mauvaise
                 | r&eacute;ponse
-              input.form-input(name='badanswer-1-content' type='text')
+              input.form-input(name='badanswer-content' type='text')
           .input-container-center-btn
             button.input-container-btn-add(name='btn-add-badanswer')
               img(src='/assets/icons/plus.png' alt='add')
@@ -44,7 +44,7 @@ head
               | un th&egrave;me
             ul.form-select
               each theme in themes 
-                li.select-item
+                li.select-item(name= theme.id)
                   .select-item-content #{theme.label}
               
         label.form-label(for='goodanswer-content') Dur&eacute;e
@@ -73,8 +73,9 @@ head
                   p #{difficulty.point}
         .modal-btn-container
           button.btn-submit Valider
-        input(type='hidden' name='time_id' value='')
-        input(type='hidden' name='difficulty_id' value='')
+        input(type='hidden' id='time_id' value='')
+        input(type='hidden' id='difficulty_id' value='')
+        input(type='hidden' id='theme_id' value='')
 #overlay
 img(src='/assets/pictures/background.png' alt='' srcset='')
 .container(style="background-image:\
@@ -84,9 +85,11 @@ url('/assets/pictures/home-box.png')")
   .headband
     h6 Chaque question est v&eacute;rifi&eacute;e par un Administrateur
   .btn-center
-    button.btn-add(type='submit' data-modal-target='#modal')
+    button.btn-add(id="btn-form-submit" data-modal-target='#modal')
       img(src='/assets/icons/plus.png' alt='' srcset='')
 script(src='/js/home/pop-up.js')
 script(src='/js/home/form/bad-answer.js')
 script(src='/js/home/form/item-card.js')
+script(src='/js/home/form/select.js')
+script(src='/js/home/form/form-submit.js')
 script(src='/js/crud/theme/themeCrud.js')

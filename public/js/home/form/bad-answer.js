@@ -5,7 +5,7 @@ $(document).ready(function() {
         var label = `<label class="form-label" for="badanswer-${length}-content">Mauvaise réponse</label>`;
         var input = `
         <div class="input-deletable-container">
-            <input class="form-input" name="badanswer-${length}-content" style="flex:3;" type="text">
+            <input class="form-input" name="badanswer-content" style="flex:3;" type="text">
             <img class="input-deletable-btn" name="${length}" src="/assets/icons/bin.png" alt="delete">
         </div>`;
         var inputbox = `

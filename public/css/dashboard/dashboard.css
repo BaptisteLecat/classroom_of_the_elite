@@ -45,6 +45,11 @@
     }
 }
 
+.table-question-theme{
+    margin: 0px 6px;
+    height: 350px;
+}
+
 body {
     margin: 0;
     font-family: var(--bs-font-sans-serif);

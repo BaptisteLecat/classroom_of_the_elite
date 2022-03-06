@@ -47,9 +47,12 @@ var engines = require("consolidate");
 
 app.set("views", __dirname + "/views");
 
-// assign the twig engine to .html files
-app.engine('html', engines.twig);
+// assign the html engine to .html files
+app.engine('html', engines.htmling);
 app.set('view engine', 'html');
+// assign the twig engine to .twig files
+app.engine('twig', engines.twig);
+app.set('view engine', 'twig');
 // assign the piug engine to .pug files
 app.engine("pug", engines.pug);
 app.set("view engine", "pug");

@@ -30,6 +30,7 @@ router.get("/dashboard", async(req, res) => {
     });
 
     res.locals.themes = themes;
+    console.log(themes);
     res.locals.questions = questions;
     res.locals.questionsValidated = questionsValidated;
     res.locals.questionsNotValidated = questionsNotValidated;

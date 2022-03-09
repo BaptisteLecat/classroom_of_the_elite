@@ -71,21 +71,21 @@
 				</ul>
 			</div>
 			<!--<div class="sidenav-footer mx-3 ">
-																																	            <div class="card card-background shadow-none card-background-mask-secondary" id="sidenavCard">
-																																	                <div class="full-background" style="background-image: url('../assets/img/curved-images/white-curved.jpeg')"></div>
-																																	                <div class="card-body text-start p-3 w-100">
-																																	                    <div class="icon icon-shape icon-sm bg-white shadow text-center mb-3 d-flex align-items-center justify-content-center border-radius-md">
-																																	                        <i class="ni ni-diamond text-dark text-gradient text-lg top-0" aria-hidden="true" id="sidenavCardIcon"></i>
-																																	                    </div>
-																																	                    <div class="docs-info">
-																																	                        <h6 class="text-white up mb-0">Need help?</h6>
-																																	                        <p class="text-xs font-weight-bold">Please check our docs</p>
-																																	                        <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/soft-ui-dashboard" target="_blank" class="btn btn-white btn-sm w-100 mb-0">Documentation</a>
-																																	                    </div>
-																																	                </div>
-																																	            </div>
-																																	
-																																	        </div>-->
+																																																																																	            <div class="card card-background shadow-none card-background-mask-secondary" id="sidenavCard">
+																																																																																	                <div class="full-background" style="background-image: url('../assets/img/curved-images/white-curved.jpeg')"></div>
+																																																																																	                <div class="card-body text-start p-3 w-100">
+																																																																																	                    <div class="icon icon-shape icon-sm bg-white shadow text-center mb-3 d-flex align-items-center justify-content-center border-radius-md">
+																																																																																	                        <i class="ni ni-diamond text-dark text-gradient text-lg top-0" aria-hidden="true" id="sidenavCardIcon"></i>
+																																																																																	                    </div>
+																																																																																	                    <div class="docs-info">
+																																																																																	                        <h6 class="text-white up mb-0">Need help?</h6>
+																																																																																	                        <p class="text-xs font-weight-bold">Please check our docs</p>
+																																																																																	                        <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/soft-ui-dashboard" target="_blank" class="btn btn-white btn-sm w-100 mb-0">Documentation</a>
+																																																																																	                    </div>
+																																																																																	                </div>
+																																																																																	            </div>
+																																																																																	
+																																																																																	        </div>-->
 		</aside>
 		<main
 			class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
@@ -308,87 +308,87 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-4">
-						<div class="card h-100 mb-4">
-							<div class="card-header pb-0 px-3">
-								<div class="row">
-									<div class="col-md-6">
-										<h6 class="mb-0">Questions</h6>
-									</div>
-									<div class="col-md-6 d-flex justify-content-end align-items-center">
-										<i class="far fa-calendar-alt me-2" aria-hidden="true"></i>
-										<small>Pokemon</small>
+					{% if questionsNotValidated.length > 0 %}
+
+						<div class="col-md-4">
+							<div class="card h-100 mb-4">
+								<div class="card-header pb-0 px-3">
+									<div class="row">
+										<div class="col-md-6">
+											<h6 class="mb-0">Questions</h6>
+										</div>
+										<div class="col-md-6 d-flex justify-content-end align-items-center">
+											<i class="far fa-calendar-alt me-2" aria-hidden="true"></i>
+											<small>{{ questionsNotValidated.0.theme.label}}</small>
+
+
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="card-body pt-4 p-3">
-								<p>Dans quel episode Sacha a t'il capturé Pikachu?</p>
-								<hr class="horizontal gray-light my-2">
-								<h6 class="text-uppercase text-body text-xs font-weight-bolder mb-3">Bonne réponse</h6>
-								<ul class="list-group">
-									<li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-										<div class="d-flex align-items-center">
-											<button class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-3 btn-sm d-flex align-items-center justify-content-center">
-												<i class="fas fa-arrow-down" aria-hidden="true"></i>
-											</button>
-											<div class="d-flex flex-column">
-												<h6 class="mb-1 text-dark text-sm">Premier episode</h6>
+								<div class="card-body pt-4 p-3">
+									<p>{{ questionsNotValidated.0.content}}</p>
 
-											</div>
-										</div>
-									</li>
-								</ul>
-								<h6 class="text-uppercase text-body text-xs font-weight-bolder my-3">Mauvaise réponse</h6>
-								<ul class="list-group">
-									<li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-										<div class="d-flex align-items-center">
-											<button class="btn btn-icon-only btn-rounded btn-outline-danger mb-0 me-3 btn-sm d-flex align-items-center justify-content-center">
-												<i class="fas fa-arrow-up" aria-hidden="true"></i>
-											</button>
-											<div class="d-flex flex-column">
-												<h6 class="mb-1 text-dark text-sm">Deuxième épisode</h6>
-											</div>
-										</div>
-									</li>
-									<li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-										<div class="d-flex align-items-center">
-											<button class="btn btn-icon-only btn-rounded btn-outline-danger mb-0 me-3 btn-sm d-flex align-items-center justify-content-center">
-												<i class="fas fa-arrow-up" aria-hidden="true"></i>
-											</button>
-											<div class="d-flex flex-column">
-												<h6 class="mb-1 text-dark text-sm">Troisième épisode</h6>
-											</div>
-										</div>
-									</li>
-									<li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-										<div class="d-flex align-items-center">
-											<button class="btn btn-icon-only btn-rounded btn-outline-danger mb-0 me-3 btn-sm d-flex align-items-center justify-content-center">
-												<i class="fas fa-arrow-up" aria-hidden="true"></i>
-											</button>
-											<div class="d-flex flex-column">
-												<h6 class="mb-1 text-dark text-sm">Quatrième épisode</h6>
-											</div>
-										</div>
-									</li>
-								</ul>
-								<hr class="horizontal gray-light my-2">
-								<ul class="list-group">
-									<li class="list-group-item border-0 ps-0 pt-0 text-sm">
-										<strong class="text-dark">Difficulté:</strong>
-										&nbsp; Simple</li>
-									<li class="list-group-item border-0 ps-0 text-sm">
-										<strong class="text-dark">Temps:</strong>
-										&nbsp; Moyen</li>
-								</ul>
-								<hr class="horizontal gray-light my-2">
-								<div class="d-flex justify-content-evenly">
-									<button type="button" class="btn bg-gradient-secondary">Modifier</button>
-									<button type="button" class="btn bg-gradient-danger">Refuser</button>
-									<button type="button" class="btn bg-gradient-success">Valider</button>
+
+									<hr class="horizontal gray-light my-2">
+									<h6 class="text-uppercase text-body text-xs font-weight-bolder mb-3">Bonne réponse</h6>
+									<ul class="list-group">
+										{% for goodAnswer in questionsNotValidated.0.goodAnswers %}
+
+											<li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+												<div class="d-flex align-items-center">
+													<button class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-3 btn-sm d-flex align-items-center justify-content-center">
+														<i class="fas fa-arrow-down" aria-hidden="true"></i>
+													</button>
+													<div class="d-flex flex-column">
+														<h6 class="mb-1 text-dark text-sm">{{ goodAnswer.content }}</h6>
+													</div>
+												</div>
+											</li>
+										{% endfor %}
+
+									</ul>
+									<h6 class="text-uppercase text-body text-xs font-weight-bolder my-3">Mauvaise réponse</h6>
+									<ul class="list-group">
+										{% for badAnswer in questionsNotValidated.0.badAnswers %}
+
+											<li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+												<div class="d-flex align-items-center">
+													<button class="btn btn-icon-only btn-rounded btn-outline-danger mb-0 me-3 btn-sm d-flex align-items-center justify-content-center">
+														<i class="fas fa-arrow-up" aria-hidden="true"></i>
+													</button>
+													<div class="d-flex flex-column">
+														<h6 class="mb-1 text-dark text-sm">{{ badAnswer.content }}</h6>
+													</div>
+												</div>
+											</li>
+										{% endfor %}
+									</ul>
+									<hr class="horizontal gray-light my-2">
+									<ul class="list-group">
+										<li class="list-group-item border-0 ps-0 pt-0 text-sm">
+											<strong class="text-dark">Difficulté:</strong>
+											&nbsp;
+											{{ questionsNotValidated.0.difficulty.label }}</li>
+
+
+										<li class="list-group-item border-0 ps-0 text-sm">
+											<strong class="text-dark">Temps:</strong>
+											&nbsp;
+											{{ questionsNotValidated.0.time.label }}</li>
+
+
+									</ul>
+									<hr class="horizontal gray-light my-2">
+									<div class="d-flex justify-content-evenly">
+										<button type="button" class="btn bg-gradient-secondary">Modifier</button>
+										<button type="button" class="btn bg-gradient-danger">Refuser</button>
+										<button type="button" class="btn bg-gradient-success">Valider</button>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
+					{% endif %}
+
 				</div>
 				<footer class="footer pt-3  ">
 					<div class="container-fluid">

@@ -5,9 +5,13 @@ class QuestionRepository {
         this.axiosInstance = axiosInstance;
     }
 
-    async getQuestions() {
+    async getQuestions(filter) {
+        var url =
+          filter != undefined && filter != null
+            ? `/api/questions?${filter}`
+            : "/api/questions";
         return await this.axiosInstance
-            .get("/api/questions", {
+            .get(url, {
                 timeout: 5000,
             })
             .then(function(response) {

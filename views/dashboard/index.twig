@@ -34,6 +34,7 @@
 		<!-- CSS Files -->
 		<link id="pagestyle" href="/css/dashboard/dashboard.css?v=1.0.3" rel="stylesheet"/>
 		<script src="https://kit.fontawesome.com/4218f7d750.js" crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	</head>
 
 	<body class="g-sidenav-show  bg-gray-100">
@@ -71,21 +72,21 @@
 				</ul>
 			</div>
 			<!--<div class="sidenav-footer mx-3 ">
-																																																																																	            <div class="card card-background shadow-none card-background-mask-secondary" id="sidenavCard">
-																																																																																	                <div class="full-background" style="background-image: url('../assets/img/curved-images/white-curved.jpeg')"></div>
-																																																																																	                <div class="card-body text-start p-3 w-100">
-																																																																																	                    <div class="icon icon-shape icon-sm bg-white shadow text-center mb-3 d-flex align-items-center justify-content-center border-radius-md">
-																																																																																	                        <i class="ni ni-diamond text-dark text-gradient text-lg top-0" aria-hidden="true" id="sidenavCardIcon"></i>
-																																																																																	                    </div>
-																																																																																	                    <div class="docs-info">
-																																																																																	                        <h6 class="text-white up mb-0">Need help?</h6>
-																																																																																	                        <p class="text-xs font-weight-bold">Please check our docs</p>
-																																																																																	                        <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/soft-ui-dashboard" target="_blank" class="btn btn-white btn-sm w-100 mb-0">Documentation</a>
-																																																																																	                    </div>
-																																																																																	                </div>
-																																																																																	            </div>
-																																																																																	
-																																																																																	        </div>-->
+																																																																																																																																																																																													            <div class="card card-background shadow-none card-background-mask-secondary" id="sidenavCard">
+																																																																																																																																																																																													                <div class="full-background" style="background-image: url('../assets/img/curved-images/white-curved.jpeg')"></div>
+																																																																																																																																																																																													                <div class="card-body text-start p-3 w-100">
+																																																																																																																																																																																													                    <div class="icon icon-shape icon-sm bg-white shadow text-center mb-3 d-flex align-items-center justify-content-center border-radius-md">
+																																																																																																																																																																																													                        <i class="ni ni-diamond text-dark text-gradient text-lg top-0" aria-hidden="true" id="sidenavCardIcon"></i>
+																																																																																																																																																																																													                    </div>
+																																																																																																																																																																																													                    <div class="docs-info">
+																																																																																																																																																																																													                        <h6 class="text-white up mb-0">Need help?</h6>
+																																																																																																																																																																																													                        <p class="text-xs font-weight-bold">Please check our docs</p>
+																																																																																																																																																																																													                        <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/soft-ui-dashboard" target="_blank" class="btn btn-white btn-sm w-100 mb-0">Documentation</a>
+																																																																																																																																																																																													                    </div>
+																																																																																																																																																																																													                </div>
+																																																																																																																																																																																													            </div>
+																																																																																																																																																																																													
+																																																																																																																																																																																													        </div>-->
 		</aside>
 		<main
 			class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
@@ -143,9 +144,9 @@
 											<h5 class="font-weight-bolder mb-0">
 												{{ questionsValidated.length }}
 												{% if (questionsValidated.length / questions.length) > 0.5 %}
-													<span class="text-success text-sm font-weight-bolder">{{ (questionsValidated.length / questions.length) * 100 }}%</span>
+													<span class="text-success text-sm font-weight-bolder">{{ ((questionsValidated.length / questions.length) * 100)|round }}%</span>
 												{% else %}
-													<span class="text-danger text-sm font-weight-bolder">{{ (questionsValidated.length / questions.length) * 100 }}%</span>
+													<span class="text-danger text-sm font-weight-bolder">{{ ((questionsValidated.length / questions.length) * 100)|round }}%</span>
 												{% endif %}
 
 											</h5>
@@ -170,11 +171,11 @@
 										<div class="numbers">
 											<p class="text-sm mb-0 text-capitalize font-weight-bold">Questions en attentes</p>
 											<h5 class="font-weight-bolder mb-0">
-												{{ questionsNotValidated.length }}
-												{% if (questionsNotValidated.length / questions.length) < 0.5 %}
-													<span class="text-success text-sm font-weight-bolder">{{ (questionsNotValidated.length / questions.length) * 100 }}%</span>
+												{{ questionsNullValidated.length }}
+												{% if (questionsNullValidated.length / questions.length) < 0.5 %}
+													<span class="text-success text-sm font-weight-bolder">{{ ((questionsNullValidated.length / questions.length) * 100)|round }}%</span>
 												{% else %}
-													<span class="text-danger text-sm font-weight-bolder">{{ (questionsNotValidated.length / questions.length) * 100 }}%</span>
+													<span class="text-danger text-sm font-weight-bolder">{{ ((questionsNullValidated.length / questions.length) * 100)|round }}%</span>
 												{% endif %}
 											</h5>
 										</div>
@@ -196,9 +197,15 @@
 								<div class="row">
 									<div class="col-8">
 										<div class="numbers">
-											<p class="text-sm mb-0 text-capitalize font-weight-bold">Themes</p>
+											<p class="text-sm mb-0 text-capitalize font-weight-bold">Questions refusées</p>
 											<h5 class="font-weight-bolder mb-0">
-												{{ themes.length }}
+												{{ questionsNotValidated.length }}
+												{% if (questionsNotValidated.length / questions.length) < 0.5 %}
+													<span class="text-success text-sm font-weight-bolder">{{ ((questionsNotValidated.length / questions.length) * 100)|round }}%</span>
+												{% else %}
+													<span class="text-danger text-sm font-weight-bolder">{{ ((questionsNotValidated.length / questions.length) * 100)|round }}%</span>
+												{% endif %}
+
 											</h5>
 										</div>
 									</div>
@@ -219,9 +226,9 @@
 								<div class="row">
 									<div class="col-8">
 										<div class="numbers">
-											<p class="text-sm mb-0 text-capitalize font-weight-bold">Administrateurs</p>
+											<p class="text-sm mb-0 text-capitalize font-weight-bold">Thèmes</p>
 											<h5 class="font-weight-bolder mb-0">
-												4
+												{{themes.length}}
 											</h5>
 										</div>
 									</div>
@@ -276,16 +283,18 @@
 															{% if theme.questionAchievePercent <= 0 %}
 																<span class="me-2 text-xs font-weight-bold">0%</span>
 															{% else %}
-																<span class="me-2 text-xs font-weight-bold">{{ theme.questionAchievePercent * 100 }}%</span>
+																<span class="me-2 text-xs font-weight-bold">{{ theme.questionAchievePercent|round }}%</span>
 															{% endif %}
 															<div>
 																<div class="progress">
 																	{% if theme.questionAchievePercent > 0.5 %}
 
-																		<div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="30" style="width: {{ theme.questionAchievePercent * 100 }}%;"></div>
+																		<div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="30" style="width: {{ theme.questionAchievePercent|round }}%;"></div>
+
 
 																	{% elseif theme.questionAchievePercent > 0 %}
-																		<div class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="30" style="width: {{ theme.questionAchievePercent * 100 }}%;"></div>
+																		<div class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="30" style="width: {{ theme.questionAchievePercent|round }}%;"></div>
+
 
 																	{% else %}
 																		<div class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="30" style="width: 0%;"></div>
@@ -308,7 +317,7 @@
 							</div>
 						</div>
 					</div>
-					{% if questionsNotValidated.length > 0 %}
+					{% if questionsNullValidated.length > 0 %}
 
 						<div class="col-md-4">
 							<div class="card h-100 mb-4">
@@ -319,20 +328,20 @@
 										</div>
 										<div class="col-md-6 d-flex justify-content-end align-items-center">
 											<i class="far fa-calendar-alt me-2" aria-hidden="true"></i>
-											<small>{{ questionsNotValidated.0.theme.label}}</small>
+											<small>{{ questionsNullValidated.0.theme.label}}</small>
 
 
 										</div>
 									</div>
 								</div>
 								<div class="card-body pt-4 p-3">
-									<p>{{ questionsNotValidated.0.content}}</p>
+									<p id="question-label">{{ questionsNullValidated.0.content}}</p>
 
 
 									<hr class="horizontal gray-light my-2">
 									<h6 class="text-uppercase text-body text-xs font-weight-bolder mb-3">Bonne réponse</h6>
 									<ul class="list-group">
-										{% for goodAnswer in questionsNotValidated.0.goodAnswers %}
+										{% for goodAnswer in questionsNullValidated.0.goodAnswers %}
 
 											<li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
 												<div class="d-flex align-items-center">
@@ -349,7 +358,7 @@
 									</ul>
 									<h6 class="text-uppercase text-body text-xs font-weight-bolder my-3">Mauvaise réponse</h6>
 									<ul class="list-group">
-										{% for badAnswer in questionsNotValidated.0.badAnswers %}
+										{% for badAnswer in questionsNullValidated.0.badAnswers %}
 
 											<li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
 												<div class="d-flex align-items-center">
@@ -368,22 +377,33 @@
 										<li class="list-group-item border-0 ps-0 pt-0 text-sm">
 											<strong class="text-dark">Difficulté:</strong>
 											&nbsp;
-											{{ questionsNotValidated.0.difficulty.label }}</li>
+											{{ questionsNullValidated.0.difficulty.label }}</li>
 
 
 										<li class="list-group-item border-0 ps-0 text-sm">
 											<strong class="text-dark">Temps:</strong>
 											&nbsp;
-											{{ questionsNotValidated.0.time.label }}</li>
+											{{ questionsNullValidated.0.time.label }}</li>
 
 
 									</ul>
 									<hr class="horizontal gray-light my-2">
-									<div class="d-flex justify-content-evenly">
-										<button type="button" class="btn bg-gradient-secondary">Modifier</button>
-										<button type="button" class="btn bg-gradient-danger">Refuser</button>
-										<button type="button" class="btn bg-gradient-success">Valider</button>
-									</div>
+									<form id="form-questionnotvalidated" method="POST" action="{{questionsNullValidated.0['@id']}}">
+
+										<div class="d-flex justify-content-evenly">
+											<input type="hidden" name="theme" value="{{questionsNullValidated.0.theme['@id']}}">
+
+											<input type="hidden" name="difficulty" value="{{questionsNullValidated.0.difficulty['@id']}}">
+
+
+											<input type="hidden" name="time" value="{{questionsNullValidated.0.time['@id']}}">
+
+
+											<button name="question-crud" action="update" class="btn bg-gradient-secondary">Modifier</button>
+											<button name="question-crud" action="refuse" class="btn bg-gradient-danger">Refuser</button>
+											<button name="question-crud" action="validate" class="btn bg-gradient-success">Valider</button>
+										</div>
+									</form>
 								</div>
 							</div>
 						</div>
@@ -409,12 +429,8 @@
 				</footer>
 			</div>
 		</main>
-		<!--   Core JS Files   -->
-		<script src="../assets/js/core/popper.min.js"></script>
-		<script src="../assets/js/core/bootstrap.min.js"></script>
-		<script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
-		<script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
-		<script src="../assets/js/plugins/chartjs.min.js"></script>
+		<script src="/js/dashboard/question/crud-questions.js"></script>
+
 		<script>
 			var ctx = document.getElementById("chart-bars").getContext("2d");
 

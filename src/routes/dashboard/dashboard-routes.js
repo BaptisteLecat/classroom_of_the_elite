@@ -11,6 +11,7 @@ router.get("/dashboard", async(req, res) => {
     var questions = [];
     var questionsValidated = [];
     var questionsNotValidated = [];
+    var questionsNullValidated = [];
 
     await getThemes(req).then((listThemes) => {
         themes = listThemes;
@@ -24,8 +25,10 @@ router.get("/dashboard", async(req, res) => {
     questions.forEach(question => {
         if (question.validated) {
             questionsValidated.push(question);
-        } else {
+        } else if(question.validated == false){
             questionsNotValidated.push(question);
+        }else{
+            questionsNullValidated.push(question);
         }
     });
 
@@ -34,6 +37,7 @@ router.get("/dashboard", async(req, res) => {
     res.locals.questions = questions;
     res.locals.questionsValidated = questionsValidated;
     res.locals.questionsNotValidated = questionsNotValidated;
+    res.locals.questionsNullValidated = questionsNullValidated;
     res.render("dashboard/index.twig");
 });
 

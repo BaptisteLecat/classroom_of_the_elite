@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/login", (req, res) => {
+    req.session.destroy();
     res.render("login/auth.pug");
 });
 

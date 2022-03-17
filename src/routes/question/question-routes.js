@@ -19,7 +19,7 @@ router.post("/questions", async function (req, res) {
     var questionId;
     const questionRepository = require(`${process.cwd()}/src/services/api/questionRepository.js`);
     var questionRepo = new questionRepository.QuestionRepository(
-      AxiosInstance.getAxiosInstance(req.session.jwt)
+      AxiosInstance.getAxiosInstance()
     );
     console.log(req.body.theme);
     await questionRepo
@@ -38,7 +38,7 @@ router.post("/questions", async function (req, res) {
     if (questionId != null) {
       const goodAnswerRepository = require(`${process.cwd()}/src/services/api/goodAnswerRepository.js`);
       var goodAnswerRepo = new goodAnswerRepository.GoodAnswerRepository(
-        AxiosInstance.getAxiosInstance(req.session.jwt)
+        AxiosInstance.getAxiosInstance()
       );
       await goodAnswerRepo
         .postGoodAnswer(req.body.goodAnswer, questionId)
@@ -48,7 +48,7 @@ router.post("/questions", async function (req, res) {
 
       const badAnswerRepository = require(`${process.cwd()}/src/services/api/badAnswerRepository.js`);
       var badAnswerRepo = new badAnswerRepository.BadAnswerRepository(
-        AxiosInstance.getAxiosInstance(req.session.jwt)
+        AxiosInstance.getAxiosInstance()
       );
       req.body["badAnswers[]"].forEach(async (badAnswer) => {
         await badAnswerRepo

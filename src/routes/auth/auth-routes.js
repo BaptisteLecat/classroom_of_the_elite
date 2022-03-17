@@ -16,7 +16,7 @@ router.post("/login", async function(req, res) {
             console.log(result);
             req.session.jwt = result.jwt;
             console.log(req.sessionID);
-            res.redirect("/");
+            res.redirect("/dashboard");
         });
     }
 });

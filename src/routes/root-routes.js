@@ -7,8 +7,6 @@ const {
 } = require(`${process.cwd()}/src/services/api/mainRepository.js`);
 
 router.get("/", async(req, res) => {
-    //req.session.destroy();
-    if (req.session && req.session.jwt) {
         /** Modal fields data */
         var themes = [];
         var times = [];
@@ -16,15 +14,15 @@ router.get("/", async(req, res) => {
 
         const themeRepository = require(`${process.cwd()}/src/services/api/themeRepository.js`);
         var themeRepo = new themeRepository.ThemeRepository(
-            AxiosInstance.getAxiosInstance(req.session.jwt)
+            AxiosInstance.getAxiosInstance()
         );
         const difficultyRepository = require(`${process.cwd()}/src/services/api/difficultyRepository.js`);
         var difficultyRepo = new difficultyRepository.DifficultyRepository(
-            AxiosInstance.getAxiosInstance(req.session.jwt)
+            AxiosInstance.getAxiosInstance()
         );
         const timeRepository = require(`${process.cwd()}/src/services/api/timeRepository.js`);
         var timeRepo = new timeRepository.TimeRepository(
-            AxiosInstance.getAxiosInstance(req.session.jwt)
+            AxiosInstance.getAxiosInstance()
         );
         await themeRepo.getThemes().then((listThemes) => {
             themes = listThemes["hydra:member"];
@@ -40,7 +38,7 @@ router.get("/", async(req, res) => {
         res.locals.difficulties = difficulties;
         res.locals.times = times;
         res.render("home/index.pug");
-    } else res.redirect("/login");
+    
 });
 
 module.exports = router;

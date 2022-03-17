@@ -7,38 +7,40 @@ const {
 const router = express.Router();
 
 router.get("/dashboard", async(req, res) => {
-    var themes = [];
-    var questions = [];
-    var questionsValidated = [];
-    var questionsNotValidated = [];
-    var questionsNullValidated = [];
+    if (req.session && req.session.jwt) {
+      var themes = [];
+      var questions = [];
+      var questionsValidated = [];
+      var questionsNotValidated = [];
+      var questionsNullValidated = [];
 
-    await getThemes(req).then((listThemes) => {
+      await getThemes(req).then((listThemes) => {
         themes = listThemes;
-    });
-    await getQuestions(req).then((listQuestions) => {
+      });
+      await getQuestions(req).then((listQuestions) => {
         questions = listQuestions;
-    });
+      });
 
-    console.log(questions);
+      console.log(questions);
 
-    questions.forEach(question => {
+      questions.forEach((question) => {
         if (question.validated) {
-            questionsValidated.push(question);
-        } else if(question.validated == false){
-            questionsNotValidated.push(question);
-        }else{
-            questionsNullValidated.push(question);
+          questionsValidated.push(question);
+        } else if (question.validated == false) {
+          questionsNotValidated.push(question);
+        } else {
+          questionsNullValidated.push(question);
         }
-    });
+      });
 
-    res.locals.themes = themes;
-    console.log(themes);
-    res.locals.questions = questions;
-    res.locals.questionsValidated = questionsValidated;
-    res.locals.questionsNotValidated = questionsNotValidated;
-    res.locals.questionsNullValidated = questionsNullValidated;
-    res.render("dashboard/index.twig");
+      res.locals.themes = themes;
+      console.log(themes);
+      res.locals.questions = questions;
+      res.locals.questionsValidated = questionsValidated;
+      res.locals.questionsNotValidated = questionsNotValidated;
+      res.locals.questionsNullValidated = questionsNullValidated;
+      res.render("dashboard/index.twig");
+    } else res.redirect("/login");
 });
 
 async function getThemes(req) {

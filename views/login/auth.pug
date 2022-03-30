@@ -10,20 +10,20 @@ head
     span#msg.error.animated.tada
     form.box(method='POST' action='/login' name='form_login' onsubmit='return checkStuff()')
       h4
-        | Portail
-        span Chatelet
+        | Classroom
+        span Dashboard
       h5 Connexion &agrave; votre compte
       .form-wrapper
         input(type='text' name='email' placeholder='Email' autocomplete='off')
         i#eye.typcn.typcn-eye
         input#pwd(type='password' name='password' placeholder='Mot de passe' autocomplete='off')
-        a.forgetpass(href='mailto: si.clinique-chatelet@medical-gouv.fr?subject=Demande de réinitialisation de Mot de Passe&body=Bonjour, je souhaiterai obtenir un nouveau mot de passe.' target='_blank') Mot de passe oubli&eacute;?
+        a.forgetpass Mot de passe oubli&eacute;?
         input.btn1(type='submit' value='Connexion')
   .footer
     span
       | Tout droits r&eacute;serv&eacute;s 
       i.fa.fa-heart.pulse
-      a Clinique LE CHATELET
+      a ClassroomOfTheElite
 script.
   var pwd = document.getElementById('pwd');
   var eye = document.getElementById('eye');

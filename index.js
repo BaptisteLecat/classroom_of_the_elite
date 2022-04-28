@@ -9,11 +9,11 @@ const dashboardRoutes = require("./src/routes/dashboard/dashboard-routes");
 const rootRootes = require("./src/routes/root-routes");
 
 var options = {
-    host: "146.59.177.96",
+    host: "146.59.177.97",
     port: 3306,
-    user: "classroom_apidevsession",
+    user: "classroom_apiprodsession",
     password: "08ds5-swDgb-f5s",
-    database: "classroomelite",
+    database: "classroom",
 };
 
 var sessionStore = new MySQLStore(options);
